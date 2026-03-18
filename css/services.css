@@ -1,0 +1,783 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root {
+    --primary-color: #2BAF6E;
+    --secondary-color: #32ADE6;
+    --gray: #202020;
+    --light-green: #b2e8c6;
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    background-color: #f4f4f4;
+    color: #555;
+    font-size: 16px;
+    line-height: 1.6em;
+    margin: 0;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.divlogo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 150px;
+}
+
+.logo {
+    max-width: 100%;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.nav-list span {
+    display: none;
+}
+
+
+/* Permite que ocupe el espacio disponible */
+.nav-list {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    gap: 20px;
+    flex-grow: 1;
+}
+
+.nav-list a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Color de fondo al pasar el mouse */
+.nav-list a:hover {
+    color: #b2e8c6;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Espaciado entre los elementos de la lista */
+.nav-list li {
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+/* Espaciado entre los iconos */
+.social-icons-header {
+    display: flex;
+    gap: 30px;
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+
+.social-icons-header a:hover {
+    color: var(--light-green);
+}
+
+.social-icons-header a:hover svg path {
+    fill: var(--light-green)
+        /* Cambia el color del SVG */
+}
+
+.social-icons-header a:hover {
+    transform: scale(1.1);
+    /* Aplica el efecto de escala a todo el contenido */
+    transition: transform 0.3s ease;
+    /* Para animar suavemente la transformación */
+}
+
+.menu-icon {
+    display: none;
+}
+
+
+.header-line {
+    border: 1px solid #fff;
+    margin-top: 10px;
+}
+
+
+
+
+
+
+
+main {
+    padding: 0px;
+    overflow: auto;
+    margin-top: 0px;
+    z-index: 1;
+}
+
+.container-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    height: 800px;
+    background-color: #32ADE6;
+    color: #fff;
+    
+}
+
+
+.grand-img{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* O "center" para centrar las imágenes */
+    align-items: center;
+    width: 100%;
+     /* Ajusta el ancho máximo del contenedor */
+    margin: auto;
+    gap: 10px; /* Espacio entre las imágenes */
+}
+.grand-img img {
+    flex: 1 1 calc(25% - 10px); /* Divide el espacio en 4 partes iguales */
+    max-width: calc(25% - 10px); /* Ajusta las imágenes al 25% del ancho */
+    aspect-ratio: 1; /* Mantiene el aspecto cuadrado */
+    object-fit: cover; /* Ajusta las imágenes al tamaño sin distorsión */
+    border: 1px solid #ccc; /* Opcional, para diseño */
+    box-sizing: border-box;
+}
+
+
+.overlay-box {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    margin: 0 auto;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    z-index: 2;
+}
+
+/* Efecto de degradado en la parte superior del cuadro */
+.overlay-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: -49px;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 100), rgba(0, 0, 0, 0));
+    /* De negro a transparente */
+}
+
+/*services*/
+.overlay-box h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    z-index: 1;
+    margin-bottom: 20px;
+    text-align: center;
+    
+}
+.overlay-box p {
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 0px 150px;
+    z-index: 1;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.texto {
+    width: 80%;
+}
+/* Botones centrados */
+.buttons {
+    display: flex;
+    gap: 20px;
+    z-index: 1;
+}
+
+.buttons a {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+/* Botón negro */
+.buttons .btn-black {
+    background-color: #202020;
+    color: #fff;
+}
+
+/* Botón blanco */
+.buttons .btn-white {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+}
+
+/* Hover en botones */
+.buttons .btn-black:hover {
+    background-color: #333;
+}
+
+.buttons .btn-white:hover {
+    background-color: #f4f4f4;
+}
+
+.services {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #e6f9ff; /* Azul suave */
+}
+
+.services h2 {
+    font-size: 2.5rem;
+    color: #32ADE6;
+    margin-bottom: 30px;
+}
+
+.service-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card svg {
+    margin-bottom: 15px;
+    fill: #2BAF6E; /* Verde para los íconos */
+    transition: fill 0.3s ease;
+}
+
+.card:hover svg {
+    fill: #32ADE6; /* Cambia a azul al pasar el mouse */
+}
+
+.card h2 {
+    font-size: 1.5rem;
+    color: #32ADE6; /* Azul */
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #4a4a4a;
+    line-height: 1.5;
+}
+
+
+
+/*FOOTER*/
+footer {
+    color: #fff;
+    background-color: var(--gray);
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+footer ul {
+    list-style: none;
+    text-decoration: none;
+    padding: 0px;
+}
+
+.container-footer {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 100px;
+    padding: 20px;
+}
+
+.container-footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.column1 {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+    height: auto;
+}
+
+
+.menu-footer-pages {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    flex-direction: column;
+    align-items: start;
+    height: 100%;
+
+
+}
+
+.menu-footer-products {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    flex-direction: column;
+    align-items: start;
+    height: 100%;
+}
+
+.tittle-footer {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+.nav-footer {
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    align-items: start;
+    height: 100%;
+}
+.nav-footer a:hover {
+    color: var(--light-green);
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+
+
+.social-icons-footer {
+    display: flex;
+    gap: 15px;
+    padding: 10px;
+    flex-direction: column;
+    align-items: start;
+    width: 300px;
+}
+
+.social-icons-footer a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    text-decoration: none;
+    color: #fff;
+    font-size: 1em;
+}
+
+
+
+.social-icons-footer p {
+    margin: 0;
+
+}
+
+.social-icons-footer a:hover {
+    color: var(--light-green);
+
+}
+
+.social-icons-footer a:hover svg path {
+    fill: var(--light-green);
+
+}
+
+.social-icons-footer a:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.menu-footer-copyright {
+    border-top: 1px solid #4B5563;
+    /* Borde blanco solo en la parte superior */
+    padding: 10px 0;
+    /* Añade un poco de espacio arriba y abajo del contenido */
+    text-align: center;
+    /* Centra el texto */
+    color: #fff;
+    width: 80%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Cambia el color del texto a blanco */
+}
+
+
+
+
+/*FIN FOOTER*/
+
+
+/* RESPONSIVE */
+
+/* Estilo para celulares */
+@media (max-width: 767px) {
+    header {
+        height: auto;
+        
+
+        
+    }
+
+    .divlogo img {
+        width: 100px;
+    }
+
+    .nav-menu {
+        position: relative;
+
+        .nav-list {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            position: absolute;
+            top: 100%;
+            background-color: #202020;
+            right: 0;
+            padding: 20px;
+            border-radius: 25px;
+            margin: 0;
+            transform: translateX(100%);
+            /* Fuera de la pantalla, hacia arriba */
+            transition: transform 0.3s ease;
+            visibility: hidden;
+            /* Transición suave al deslizarse */
+            z-index: 999;
+
+            a:hover {
+                transform: scale(1.1);
+                /* Aplica el efecto de escala a todo el contenido */
+                transition: transform 0.3s ease;
+                /* Para animar suavemente la transformación */
+            }
+
+            span {
+                display: flex;
+                align-items: star;
+                flex-direction: column;
+                width: 100%;
+                padding: 0px;
+                gap: 5px;
+
+
+                h3 {
+                    font-size: 1.5rem;
+                    color: var(--secondary-color);
+                }
+
+                a {
+                    display: flex;
+                    align-items: center;
+                    justify-content: start;
+                    margin: 0 15px;
+                    font-weight: bold;
+
+                    svg {
+                        margin-right: 10px;
+                    }
+                }
+
+                a:hover {
+                    color: var(--light-green);
+                }
+
+                a:hover svg path {
+                    fill: var(--light-green)
+                        /* Cambia el color del SVG */
+                }
+
+                a:hover {
+                    transform: scale(1.1);
+                    /* Aplica el efecto de escala a todo el contenido */
+                    transition: transform 0.3s ease;
+                    /* Para animar suavemente la transformación */
+                }
+            }
+
+
+
+        }
+
+        .social-icons-header {
+            display: none;
+        }
+
+
+
+
+
+    }
+
+    .nav-list.active {
+        transform: translateX(20%);
+        /* Mueve la lista hacia abajo */
+        opacity: 1;
+        /* Hacerlo visible */
+        visibility: visible;
+    }
+
+    .menu-icon {
+        display: block;
+        color: #FFF;
+        cursor: pointer;
+        width: 40px;
+
+        svg {
+            color: #FFF;
+        }
+    }
+
+    .menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        /* Color gris semitransparente */
+        z-index: 998;
+        /* Debe estar por debajo del menú pero encima del resto de la página */
+        visibility: hidden;
+        /* No visible por defecto */
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    /* Cuando el menú está activo, mostrar el overlay */
+    .menu-overlay.active {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    /* Asegúrate de que el menú esté por encima del overlay */
+    .nav-list {
+        z-index: 999;
+    }
+
+
+
+    main {
+        width: 100%;
+        overflow-x: hidden;
+
+    }
+
+
+    footer {
+        overflow-x: hidden;
+
+        display: flex;
+        height: 600px;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer h3 {
+        font-size: 0.8rem;
+    }
+
+    .tittle-footer {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+
+    .container-footer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        width: 400px;
+        /* Ajusta según el diseño */
+        padding: 20px;
+        justify-items: center;
+
+        .column1 {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: center;
+            gap: 1px;
+            padding: 10px;
+        }
+
+        .menu-footer-products {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            gap: 5px;
+        }
+
+        .menu-footer-pages {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            gap: 5px;
+        }
+
+        .social-icons-footer {
+            gap: 5px;
+            width: 100%;
+        }
+
+        .nav-footer {
+            font-size: 0.8rem;
+        }
+    }
+
+}
+
+/* General styles for small screens */
+@media (max-width: 768px) {
+    .container-main {
+        flex-direction: column; /* Cambia a diseño en columna */
+        height: auto; /* Permite que se ajuste automáticamente */
+        padding: 10px;
+    }
+
+    .grand-img {
+        gap: 5px; /* Reduce el espacio entre imágenes */
+    }
+
+    .grand-img img {
+        flex: 1 1 calc(50% - 10px); /* Mantén dos imágenes por fila */
+        max-width: calc(50% - 10px); /* Asegura que ocupen el 50% menos el gap */
+    }
+
+    .overlay-box h1 {
+        font-size: 2.5rem; /* Reduce el tamaño del título */
+    }
+
+    .overlay-box p {
+        font-size: 1rem; /* Ajusta el tamaño del texto */
+        padding: 0px 20px; /* Reduce el margen interno */
+    }
+
+    .buttons a {
+        font-size: 0.9rem; /* Reduce el tamaño de los botones */
+        padding: 8px 15px; /* Ajusta el padding */
+    }
+
+    .services h2 {
+        font-size: 2rem; /* Reduce el tamaño del título de servicios */
+    }
+
+    .card {
+        max-width: 90%; /* Asegura que las tarjetas ocupen todo el ancho */
+    }
+}
+
+/* For very small screens (phones) */
+@media (max-width: 480px) {
+    .grand-img img {
+        flex: 1 1 calc(50% - 10px); /* Sigue siendo 2x2 */
+        max-width: calc(50% - 10px);
+    }
+
+    .overlay-box h1 {
+        font-size: 2rem; /* Más pequeño aún */
+    }
+
+    .overlay-box p {
+        font-size: 0.9rem; /* Reduce el texto */
+    }
+
+    .buttons {
+        flex-direction: column; /* Cambia botones a columna */
+        gap: 10px;
+    }
+
+    .buttons a {
+        width: 100%; /* Botones ocupan todo el ancho */
+        text-align: center;
+    }
+
+    .service-container {
+        grid-template-columns: 1fr; /* Una tarjeta por fila */
+    }
+}
+
+/* For medium screens (tablets) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .grand-img img {
+        flex: 1 1 calc(33.33% - 10px); /* En tablets, 3 imágenes por fila */
+        max-width: calc(33.33% - 10px);
+    }
+
+    .overlay-box h1 {
+        font-size: 3rem; /* Ajusta el tamaño del título */
+    }
+
+    .overlay-box p {
+        font-size: 1.1rem;
+        padding: 0px 50px;
+    }
+
+    .buttons a {
+        font-size: 1rem; /* Mantén el tamaño moderado */
+        padding: 10px 20px;
+    }
+
+    .service-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}

@@ -1239,7 +1239,7 @@ main > .overlay-box .hometext {
         top: 0;
         right: -100%;
         width: 280px;
-        height: 100vh;
+        height: 50vh;
         background: #ffffff;
         flex-direction: column;
         padding: 5rem 2rem;
